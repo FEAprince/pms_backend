@@ -28,8 +28,9 @@ const TasksSchema = new Schema(
       type: String,
       required: true,
       trim: true,
-      enum: ["1", "3", "6", "9"],
+      enum: ["1", "3", "5", "8"],
     },
+
     isActive: {
       type: String,
       default: true,

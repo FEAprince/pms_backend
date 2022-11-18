@@ -1,4 +1,4 @@
-const Tasks = require("../Tasks/Tasks.modal");
+const Tasks = require("../Tasks/tasks.modal");
 const { responseMessages } = require("../../../helper/responseMessages");
 const pagination = require("../../../helper/pagination");
 
@@ -9,7 +9,7 @@ exports.create = async (tasks) => {
       description: tasks.description,
       taskStartDate: tasks.taskStartDate,
       taskEndDate: tasks.taskEndDate,
-      taskPriority: tasks.taskPriority
+      taskPriority: tasks.taskPriority,
     });
     // const info = new User(user);
 
