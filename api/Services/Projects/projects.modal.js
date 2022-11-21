@@ -24,12 +24,14 @@ const ProjectsSchema = new Schema(
       required: true,
       trim: true,
     },
-    userId: {
-      type: mongoose.Types.ObjectId,
-      required: false,
-      ref: "user",
-      trim: true,
-    },
+    assignUsers: [
+      {
+        type: mongoose.Types.ObjectId,
+        required: false,
+        trim: true,
+        ref: "user",
+      },
+    ],
     isActive: {
       type: String,
       default: true,

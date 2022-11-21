@@ -9,7 +9,7 @@ exports.projects = (req, res, next) => {
         projectDescription: Joi.string().required(),
         projectStartDate: Joi.string().required(),
         projectEndDate: Joi.string().required(),
-        userId: Joi.objectId(),
+        assignUsers: Joi.array().required(),
       });
 
       let data = schema.validate(req.body);

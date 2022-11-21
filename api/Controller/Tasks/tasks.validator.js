@@ -10,7 +10,8 @@ exports.tasks = (req, res, next) => {
         taskStartDate: Joi.string().required(),
         taskEndDate: Joi.string().required(),
         taskPriority: Joi.string().required(),
-        projectId: Joi.objectId(),
+        projectId: Joi.objectId().required(),
+        assignUsers: Joi.array().required(),
       });
 
       let data = schema.validate(req.body);

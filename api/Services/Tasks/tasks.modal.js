@@ -36,6 +36,15 @@ const TasksSchema = new Schema(
       trim: true,
       ref: "projects",
     },
+    assignUsers: [
+      {
+        type: mongoose.Types.ObjectId,
+        required: false,
+        trim: true,
+        ref: "user",
+      },
+    ],
+
     isActive: {
       type: String,
       default: true,

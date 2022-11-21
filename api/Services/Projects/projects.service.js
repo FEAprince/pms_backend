@@ -9,9 +9,9 @@ exports.create = async (projects) => {
       projectDescription: projects.projectDescription,
       projectStartDate: projects.projectStartDate,
       projectEndDate: projects.projectEndDate,
-      userId: projects.userId,
+      assignUsers: projects.assignUsers,
     });
-    console.log(info);
+
     const projectData = await info.save();
 
     if (projectData) {

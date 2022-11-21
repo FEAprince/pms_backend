@@ -4,6 +4,7 @@ const pagination = require("../../../helper/pagination");
 
 exports.create = async (tasks) => {
   try {
+    console.log("TASKS", tasks);
     const info = new Tasks({
       tasksName: tasks.tasksName,
       description: tasks.description,
@@ -11,7 +12,9 @@ exports.create = async (tasks) => {
       taskEndDate: tasks.taskEndDate,
       taskPriority: tasks.taskPriority,
       projectId: tasks.projectId,
+      assignUsers: tasks.assignUsers,
     });
+
     const tasksData = await info.save();
 
     if (tasksData) {
@@ -38,7 +41,7 @@ exports.create = async (tasks) => {
 
 exports.list = async (where, datum) => {
   try {
-    const respose = await pagination.list(Tasks, where, datum ,[ "projectId"]);
+    const respose = await pagination.list(Tasks, where, datum, ["projectId"]);
     if (respose) {
       return {
         success: true,
