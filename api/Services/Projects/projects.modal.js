@@ -2,39 +2,33 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const TasksSchema = new Schema(
+const ProjectsSchema = new Schema(
   {
-    tasksName: {
+    projectName: {
       type: String,
       required: true,
       trim: true,
     },
-    description: {
+    projectDescription: {
       type: String,
       required: true,
       trim: true,
     },
-    taskStartDate: {
+    projectStartDate: {
       type: String,
       required: true,
       trim: true,
     },
-    taskEndDate: {
+    projectEndDate: {
       type: String,
       required: true,
       trim: true,
     },
-    taskPriority: {
-      type: String,
-      required: true,
-      trim: true,
-      enum: ["1", "3", "5", "8"],
-    },
-    projectId: {
+    userId: {
       type: mongoose.Types.ObjectId,
       required: false,
+      ref: "user",
       trim: true,
-      ref: "projects",
     },
     isActive: {
       type: String,
@@ -45,5 +39,5 @@ const TasksSchema = new Schema(
     timestamps: true,
   }
 );
-const Tasks = mongoose.model("tasks", TasksSchema);
-module.exports = Tasks;
+const Projects = mongoose.model("projects", ProjectsSchema);
+module.exports = Projects;

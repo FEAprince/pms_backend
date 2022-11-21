@@ -1,16 +1,15 @@
 const Joi = require("joi");
 Joi.objectId = require("joi-objectid")(Joi);
 
-exports.tasks = (req, res, next) => {
+exports.projects = (req, res, next) => {
   try {
     if (req.body) {
       const schema = Joi.object({
-        tasksName: Joi.string().required(),
-        description: Joi.string().required(),
-        taskStartDate: Joi.string().required(),
-        taskEndDate: Joi.string().required(),
-        taskPriority: Joi.string().required(),
-        projectId: Joi.objectId(),
+        projectName: Joi.string().required(),
+        projectDescription: Joi.string().required(),
+        projectStartDate: Joi.string().required(),
+        projectEndDate: Joi.string().required(),
+        userId: Joi.objectId(),
       });
 
       let data = schema.validate(req.body);

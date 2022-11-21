@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-const tasksService = require("../../Services/Tasks/tasks.service");
-const tasksValidator = require("../../Controller/Tasks/tasks.validator");
+const projectService = require("../../Services/Projects/projects.service");
+const projectValidator = require("../../Controller/Projects/projects.validator");
 
-router.post("/", tasksValidator.tasks, async (req, res) => {
+router.post("/", projectValidator.projects, async (req, res) => {
   try {
-    let { success, message, data } = await tasksService.create(req.body);
+    
+    let { success, message, data } = await projectService.create(req.body);
 
     if (success) {
       return res.status(200).json({ success, message, data });
@@ -19,7 +20,7 @@ router.post("/", tasksValidator.tasks, async (req, res) => {
 });
 router.post("/list", async (req, res) => {
   try {
-    let { success, message, data } = await tasksService.list(
+    let { success, message, data } = await projectService.list(
       req.body.where,
       req.body.pagination
     );
@@ -34,7 +35,7 @@ router.post("/list", async (req, res) => {
 });
 router.put("/:id", async (req, res) => {
   try {
-    let { success, message, data } = await tasksService.update(
+    let { success, message, data } = await projectService.update(
       req.params.id,
       req.body
     );
@@ -51,7 +52,7 @@ router.put("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   try {
-    let { success, message, data } = await tasksService.softDelete(
+    let { success, message, data } = await projectService.softDelete(
       req.params.id
     );
     if (success) {

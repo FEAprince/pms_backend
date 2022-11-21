@@ -1,29 +1,29 @@
-const Tasks = require("../Tasks/tasks.modal");
+const Projects = require("../Projects/projects.modal");
 const { responseMessages } = require("../../../helper/responseMessages");
 const pagination = require("../../../helper/pagination");
 
-exports.create = async (tasks) => {
+exports.create = async (projects) => {
   try {
-    const info = new Tasks({
-      tasksName: tasks.tasksName,
-      description: tasks.description,
-      taskStartDate: tasks.taskStartDate,
-      taskEndDate: tasks.taskEndDate,
-      taskPriority: tasks.taskPriority,
-      projectId: tasks.projectId,
+    const info = new Projects({
+      projectName: projects.projectName,
+      projectDescription: projects.projectDescription,
+      projectStartDate: projects.projectStartDate,
+      projectEndDate: projects.projectEndDate,
+      userId: projects.userId,
     });
-    const tasksData = await info.save();
+    console.log(info);
+    const projectData = await info.save();
 
-    if (tasksData) {
+    if (projectData) {
       return {
         success: true,
-        message: "Task created successfully!",
-        data: tasksData,
+        message: "Project created successfully!",
+        data: projectData,
       };
     } else {
       return {
         success: false,
-        message: "Task not created!",
+        message: "Project not created!",
         data: "",
       };
     }
@@ -38,7 +38,7 @@ exports.create = async (tasks) => {
 
 exports.list = async (where, datum) => {
   try {
-    const respose = await pagination.list(Tasks, where, datum ,[ "projectId"]);
+    const respose = await pagination.list(Projects, where, datum, ["userId"]);
     if (respose) {
       return {
         success: true,
@@ -63,18 +63,18 @@ exports.list = async (where, datum) => {
 exports.update = async (params_id, user) => {
   try {
     const options = { new: true };
-    const result = await Tasks.findByIdAndUpdate(params_id, user, options);
+    const result = await Projects.findByIdAndUpdate(params_id, user, options);
 
     if (result) {
       return {
         success: true,
-        message: "Tasks updated",
+        message: "Project updated",
         data: result,
       };
     } else if (!result) {
       return {
         success: false,
-        message: "Tasks not updated",
+        message: "Project not updated",
         data: null,
       };
     }
@@ -88,7 +88,7 @@ exports.update = async (params_id, user) => {
 };
 exports.softDelete = async (params_id) => {
   try {
-    const result = await Tasks.findByIdAndUpdate(params_id, {
+    const result = await Projects.findByIdAndUpdate(params_id, {
       isActive: false,
     });
     if (result) {
