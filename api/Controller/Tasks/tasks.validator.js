@@ -6,13 +6,13 @@ exports.tasks = (req, res, next) => {
     if (req.body) {
       const schema = Joi.object({
         tasksName: Joi.string().required(),
-        description: Joi.string().required(),
+        description: Joi.string(),
         taskStartDate: Joi.string().required(),
         taskEndDate: Joi.string().required(),
         taskPriority: Joi.string().required(),
         projectId: Joi.objectId().required(),
         assignUsers: Joi.array().required(),
-        tasksStatus: Joi.string().required(),
+        tasksStatus: Joi.string(),
       });
 
       let data = schema.validate(req.body);
