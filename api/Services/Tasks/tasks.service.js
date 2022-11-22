@@ -4,7 +4,7 @@ const pagination = require("../../../helper/pagination");
 
 exports.create = async (tasks) => {
   try {
-    console.log("TASKS", tasks);
+    
     const info = new Tasks({
       tasksName: tasks.tasksName,
       description: tasks.description,
