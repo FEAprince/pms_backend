@@ -44,7 +44,13 @@ const TasksSchema = new Schema(
         ref: "user",
       },
     ],
-
+    tasksStatus: {
+      type: String,
+      required: true,
+      trim: true,
+      enum: ["Unassigned", "Pending", "Accepted", "Started", "Completed"],
+      default: "Unassigned",
+    },
     isActive: {
       type: String,
       default: true,

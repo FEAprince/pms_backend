@@ -13,6 +13,7 @@ exports.create = async (tasks) => {
       taskPriority: tasks.taskPriority,
       projectId: tasks.projectId,
       assignUsers: tasks.assignUsers,
+      tasksStatus: tasks.tasksStatus,
     });
 
     const tasksData = await info.save();

@@ -12,6 +12,7 @@ exports.tasks = (req, res, next) => {
         taskPriority: Joi.string().required(),
         projectId: Joi.objectId().required(),
         assignUsers: Joi.array().required(),
+        tasksStatus: Joi.string().required(),
       });
 
       let data = schema.validate(req.body);
