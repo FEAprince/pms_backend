@@ -6,7 +6,6 @@ const projectValidator = require("../../Controller/Projects/projects.validator")
 
 router.post("/", projectValidator.projects, async (req, res) => {
   try {
-    
     let { success, message, data } = await projectService.create(req.body);
 
     if (success) {

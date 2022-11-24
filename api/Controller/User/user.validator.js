@@ -14,7 +14,8 @@ exports.signup = (req, res, next) => {
 
       let data = schema.validate(req.body);
       if (data.error) {
-        return res.send(data.error);
+        // return res.send(data.error);
+        return res.status(400).send(data.error);
       } else {
         next();
       }

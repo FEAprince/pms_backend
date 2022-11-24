@@ -38,9 +38,14 @@ exports.create = async (projects) => {
 
 exports.list = async (where, datum) => {
   try {
-    const respose = await pagination.list(Projects, where, datum, [
-      "assignUsers",
-    ]);
+    const respose = await pagination.list(
+      Projects,
+      where,
+      datum,
+      ["assignUsers"],
+      ["projectId"]
+    );
+
     if (respose) {
       return {
         success: true,
