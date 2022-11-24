@@ -6,7 +6,6 @@ const tasksValidator = require("../../Controller/Tasks/tasks.validator");
 
 router.post("/", tasksValidator.tasks, async (req, res) => {
   try {
-    
     let { success, message, data } = await tasksService.create(req.body);
 
     if (success) {

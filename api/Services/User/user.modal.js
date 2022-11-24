@@ -40,9 +40,26 @@ const UserSchema = new Schema(
       default: "",
       trim: true,
     },
+    bio: {
+      type: String,
+      default: "",
+      trim: true,
+    },
+    employeeId: {
+      type: String,
+      trim: true,
+    },
     isActive: {
       type: Boolean,
       default: false,
+    },
+    address: {
+      type: String,
+      trim: true,
+    },
+    position: {
+      type: String,
+      trim: true,
     },
   },
   {

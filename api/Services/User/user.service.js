@@ -25,6 +25,10 @@ exports.create = async (file, user) => {
       password: encryptedPassword,
       phoneNumber: user.phoneNumber,
       userImg: file.path,
+      bio: user.bio,
+      employeeId: user.employeeId,
+      address: user.address,
+      position: user.position
     });
     // const info = new User(user);
 
