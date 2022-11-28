@@ -11,7 +11,7 @@ exports.create = async (projects) => {
       projectEndDate: projects.projectEndDate,
       assignUsers: projects.assignUsers,
       projectStatus: projects.projectStatus,
-      categoryId: projects.categoryId
+      categoryId: projects.categoryId,
     });
 
     const projectData = await info.save();
@@ -44,8 +44,8 @@ exports.list = async (where, datum) => {
       Projects,
       where,
       datum,
-      
-      ["categoryId","assignUsers"]
+
+      ["categoryId", "assignUsers"]
     );
 
     if (respose) {
