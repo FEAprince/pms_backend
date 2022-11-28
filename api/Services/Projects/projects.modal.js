@@ -39,6 +39,14 @@ const ProjectsSchema = new Schema(
         ref: "user",
       },
     ],
+    categoryId: [
+      {
+        type: mongoose.Types.ObjectId,
+        required: false,
+        trim: true,
+        ref: "category",
+      },
+    ],
     isActive: {
       type: String,
       default: true,

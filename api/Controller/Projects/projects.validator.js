@@ -11,6 +11,7 @@ exports.projects = (req, res, next) => {
         projectEndDate: Joi.string().required(),
         assignUsers: Joi.array().required(),
         projectStatus: Joi.string().required(),
+        categoryId: Joi.objectId().required(),
       });
 
       let data = schema.validate(req.body);
