@@ -10,6 +10,7 @@ exports.create = async (projects) => {
       projectStartDate: projects.projectStartDate,
       projectEndDate: projects.projectEndDate,
       assignUsers: projects.assignUsers,
+      projectStatus: projects.projectStatus
     });
 
     const projectData = await info.save();

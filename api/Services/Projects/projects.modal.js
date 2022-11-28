@@ -24,6 +24,13 @@ const ProjectsSchema = new Schema(
       required: true,
       trim: true,
     },
+    projectStatus: {
+      type: String,
+      required: true,
+      trim: true,
+      enum: ["Approval", "Accepted", "Completed"],
+      default: "Approval",
+    },
     assignUsers: [
       {
         type: mongoose.Types.ObjectId,

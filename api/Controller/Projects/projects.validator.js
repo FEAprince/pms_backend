@@ -10,6 +10,7 @@ exports.projects = (req, res, next) => {
         projectStartDate: Joi.string().required(),
         projectEndDate: Joi.string().required(),
         assignUsers: Joi.array().required(),
+        projectStatus: Joi.string().required(),
       });
 
       let data = schema.validate(req.body);
