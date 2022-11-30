@@ -1,21 +1,21 @@
 exports.responseMessages = {
-  userAdded: "User @added sucessfully",
-  userNotAdded: "User not added",
-  alreadyExists: "User already exists",
-  userFound: "User found successfully ",
-  userNotFound: "User not found",
+  userAdded: "Data @added sucessfully",
+  userNotAdded: "Data not added",
+  alreadyExists: "Data already exists",
+  userFound: "Data found successfully ",
+  userNotFound: "Data not found",
 
   imgFound: "Img Added",
 
   dataFound: "Data Found",
   dataNotFound: "Data Not Found",
 
-  userFound: "User found successfully ",
-  userAdded: "User @added sucessfully",
-  userNotAdded: "User not added",
-  alreadyExists: "User already exists",
-  userUpdated: "User updated successfully",
-  userDeleted: "User deleted successfully",
+  userFound: "Data found successfully ",
+  userAdded: "Data @added sucessfully",
+  userNotAdded: "Data not added",
+  alreadyExists: "Data already exists",
+  userUpdated: "Data updated successfully",
+  userDeleted: "Data deleted successfully",
   dataFound: "Data found Successfully",
   dataNotFound: "Data not found",
 };
