@@ -48,8 +48,8 @@ const TasksSchema = new Schema(
       type: String,
       required: true,
       trim: true,
-      enum: ["Unassigned", "Pending", "Accepted", "Started", "Completed"],
-      default: "Unassigned",
+      enum: ["Todo", "Review", "Progress", "Completed"],
+      default: "Todo",
     },
     isActive: {
       type: String,
