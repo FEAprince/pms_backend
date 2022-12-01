@@ -15,7 +15,7 @@ module.exports = {
   },
 
   emailSubject: {
-    welcome: "Welcome to our System",
+    welcome: "Welcome to Frontendarmy",
     email_Changed: "Your email has been updated",
     password_Changed: "Password updation link",
     order_confirmation: "Order confirmation ",
