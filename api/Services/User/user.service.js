@@ -30,7 +30,7 @@ exports.create = async (user) => {
       position: user.position,
     });
 
-    // const info = new User(user);
+    // const info = new User(user);s
 
     const userData = await info.save();
     const { successMail, messageMail } = await email.sendForVeriy(userData);
