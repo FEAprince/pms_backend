@@ -3,9 +3,9 @@ module.exports = {
   BASEURL: "http://localhost:8080",
 
   email: {
-    EMAILUSERNAME: "vansh.frontendarmy@gmail.com",
-    EMAILPASSWORD: "itdurvloxvlukyeq",
-    SENDMAILFROM: "vansh.frontendarmy@gmail.com",
+    EMAILUSERNAME: "prince.frontendarmy@gmail.com",
+    EMAILPASSWORD: "ahesbvuxxdwcjyas",
+    SENDMAILFROM: "prince.frontendarmy@gmail.com",
   },
   mogno: {
     MONGO_USERNAME: "prince",

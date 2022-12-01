@@ -164,12 +164,9 @@ const uploadImg = multer({ storage: storage }).single("userImg");
 //   }
 // });
 
-router.post("/signup", uploadImg, userValidator.signup, async (req, res) => {
+router.post("/signup", userValidator.signup, async (req, res) => {
   try {
-    let { success, message, data } = await UserService.create(
-      req.file,
-      req.body
-    );
+    let { success, message, data } = await UserService.create(req.body);
 
     if (success) {
       return res.status(200).json({ success, message, data });

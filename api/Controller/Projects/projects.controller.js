@@ -64,7 +64,6 @@ router.delete("/:id", async (req, res) => {
   }
 });
 router.get("/:id", async (req, res) => {
-  console.log(res);
   try {
     let { success, message, data } = await projectService.Exists({
       _id: req.params.id,

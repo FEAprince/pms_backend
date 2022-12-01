@@ -4,7 +4,7 @@ const pagination = require("../../../helper/pagination");
 const bcrypt = require("bcryptjs");
 const email = require("../../../helper/email");
 
-exports.create = async (file, user) => {
+exports.create = async (user) => {
   try {
     const existUser = await User.findOne({ email: user.email.trim() });
     if (existUser != null) {
@@ -17,19 +17,19 @@ exports.create = async (file, user) => {
     const salt = await bcrypt.genSalt(10);
     const encryptedPassword = await bcrypt.hash(String(user.password), salt);
     // user.password = encryptedPassword;
-
     const info = new User({
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
       password: encryptedPassword,
       phoneNumber: user.phoneNumber,
-      userImg: file.path,
+      userImg: user.userImg,
       bio: user.bio,
       employeeId: user.employeeId,
       address: user.address,
-      position: user.position
+      position: user.position,
     });
+
     // const info = new User(user);
 
     const userData = await info.save();

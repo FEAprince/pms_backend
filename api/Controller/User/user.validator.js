@@ -5,14 +5,15 @@ exports.signup = (req, res, next) => {
   try {
     if (req.body) {
       const schema = Joi.object({
-        firstName: Joi.string().required(),
-        lastName: Joi.string().required(),
+        firstName: Joi.string(),
+        lastName: Joi.string(),
         email: Joi.string().max(50).email({ minDomainSegments: 2 }).required(),
         password: Joi.string().required(),
         position: Joi.string(),
-        phoneNumber: Joi.number().required(),
+        phoneNumber: Joi.number(),
         bio: Joi.string(),
         address: Joi.string(),
+        userImg: Joi.string(),
       });
 
       let data = schema.validate(req.body);
