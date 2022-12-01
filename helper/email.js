@@ -502,7 +502,7 @@ xmlns:v="urn:schemas-microsoft-com:vml"
                                     >
                                       <strong
                                         ><span style="font-size: 38px"
-                                          >Hi ${body.firstName} ${body.firstName},
+                                          >Hi ${body.firstName} ${body.lastName},
                                         </span></strong
                                       >
                                     </p>
@@ -516,7 +516,7 @@ xmlns:v="urn:schemas-microsoft-com:vml"
                                     >
                                       <strong
                                         ><span style="font-size: 38px"
-                                          >welcome to MailPro!</span
+                                          >Welcome to Frontendarmy!</span
                                         ></strong
                                       >
                                     </p>
@@ -1780,7 +1780,7 @@ xmlns:v="urn:schemas-microsoft-com:vml"
                                           >
                                             <strong
                                               ><span style="font-size: 38px"
-                                                >Hi ${body.firstName} ${body.firstName},
+                                                >Hi ${body.firstName} ${body.lastName},
                                               </span></strong
                                             >
                                           </p>
