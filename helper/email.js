@@ -2294,21 +2294,7 @@ xmlns:v="urn:schemas-microsoft-com:vml"
                                                   width="32"
                                               /></a>
                                             </td>
-                                            <td style="padding: 0 7px 0 7px">
-                                              <a href="" target="_blank"
-                                                ><img
-                                                  alt="YouTube"
-                                                  height="32"
-                                                  src="images/youtube2x.png"
-                                                  style="
-                                                    display: block;
-                                                    height: auto;
-                                                    border: 0;
-                                                  "
-                                                  title="YouTube"
-                                                  width="32"
-                                              /></a>
-                                            </td>
+                                          
                                           </tr>
                                         </table>
                                       </div>
