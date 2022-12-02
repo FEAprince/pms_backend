@@ -4,12 +4,9 @@ exports.responseMessages = {
   alreadyExists: "Data already exists",
   userFound: "Data found successfully ",
   userNotFound: "Data not found",
-
   imgFound: "Img Added",
-
   dataFound: "Data Found",
   dataNotFound: "Data Not Found",
-
   userFound: "Data found successfully ",
   userAdded: "Data @added sucessfully",
   userNotAdded: "Data not added",
