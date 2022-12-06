@@ -111,6 +111,15 @@ router.post("/search", async (req, res) => {
           {
             projectStatus: { $regex: ".*" + searchText + ".*", $options: "i" },
           },
+          {
+            projectEndDate: { $regex: ".*" + searchText + ".*", $options: "i" },
+          },
+          {
+            projectStartDate: {
+              $regex: ".*" + searchText + ".*",
+              $options: "i",
+            },
+          },
         ],
       });
       if (result.length > 0) {
