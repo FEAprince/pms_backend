@@ -4,6 +4,14 @@ const pagination = require("../../../helper/pagination");
 
 exports.create = async (projects) => {
   try {
+    let date_1 = new Date(projects.projectEndDate);
+    let date_2 = new Date();
+    const days = (date_1, date_2) => {
+      let difference = date_1.getTime() - date_2.getTime();
+      let TotalDays = Math.ceil(difference / (1000 * 3600 * 24));
+      return TotalDays;
+    };
+
     const info = new Projects({
       projectName: projects.projectName,
       projectDescription: projects.projectDescription,
@@ -12,6 +20,7 @@ exports.create = async (projects) => {
       assignUsers: projects.assignUsers,
       projectStatus: projects.projectStatus,
       categoryId: projects.categoryId,
+      daysLeft: days(date_1, date_2),
     });
 
     const projectData = await info.save();

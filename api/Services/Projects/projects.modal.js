@@ -37,6 +37,10 @@ const ProjectsSchema = new Schema(
         ref: "user",
       },
     ],
+    daysLeft: {
+      type: Number,
+      trim: true,
+    },
     categoryId: [
       {
         type: mongoose.Types.ObjectId,

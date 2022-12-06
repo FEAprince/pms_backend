@@ -1,36 +1,31 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const { randomUUID } = require("crypto");
 const UserSchema = new Schema(
   {
     userImg: {
       type: String,
-      // required: true,
       trim: true,
     },
     firstName: {
       type: String,
-      // required: true,
       trim: true,
     },
     lastName: {
       type: String,
-      // required: true,
       trim: true,
     },
     email: {
       type: String,
-      // required: true,
       unique: true,
       trim: true,
     },
     password: {
       type: String,
-      // required: true,
       trim: true,
     },
     phoneNumber: {
       type: Number,
-      // required: true,
       trim: true,
     },
     refreshToken: {
@@ -46,6 +41,7 @@ const UserSchema = new Schema(
     employeeId: {
       type: String,
       trim: true,
+      default: randomUUID().toUpperCase().slice(0, 7),
     },
     isActive: {
       type: Boolean,
@@ -54,10 +50,13 @@ const UserSchema = new Schema(
     address: {
       type: String,
       trim: true,
+      default: "",
     },
     position: {
       type: String,
       trim: true,
+      enum: ["Admin", "SuperAdmin", "Employee"],
+      default: "Employee",
     },
   },
   {
