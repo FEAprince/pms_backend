@@ -6,6 +6,7 @@ const UserSchema = new Schema(
     userImg: {
       type: String,
       trim: true,
+      default: " ",
     },
     firstName: {
       type: String,
@@ -27,6 +28,7 @@ const UserSchema = new Schema(
     phoneNumber: {
       type: Number,
       trim: true,
+      default: "",
     },
     refreshToken: {
       type: String,
