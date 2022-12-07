@@ -10,41 +10,29 @@ const multer = require("multer");
 const userModal = require("../../Services/User/user.modal");
 const { number } = require("joi");
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "public/img/user");
-  },
-  filename: function (req, file, cb) {
-    cb(null, "user-" + Date.now() + "." + file.originalname.split(".")[1]);
-  },
+router.get("/verify/:id", async (req, res) => {
+  try {
+    const { success, message, data } = await UserService.Exists(req.params._id);
+    if (success) {
+      const updateResponse = await UserService.update(req.params.id, {
+        isActive: true,
+      });
+      if (updateResponse.success) {
+        res.status(200).json({ ...updateResponse, data: null });
+      } else {
+        res.status(400).json({
+          success: updateResponse.success,
+          message: updateResponse.message,
+          data: updateResponse.data,
+        });
+      }
+    } else {
+      res.status(400).json({ success, message, data });
+    }
+  } catch (error) {
+    res.status(400).json({ message: error });
+  }
 });
-
-const uploadImg = multer({ storage: storage }).single("userImg");
-
-// this "get" call occurs after the user clicks on the link which was sent in the email
-// router.get("/verify/:id", async (req, res) => {
-//   try {
-//     const { success, message, data } = await UserService.Exists(req.params._id);
-//     if (success) {
-//       const updateResponse = await UserService.update(req.params.id, {
-//         isActive: true,
-//       });
-//       if (updateResponse.success) {
-//         res.status(200).json({ ...updateResponse, data: null });
-//       } else {
-//         res.status(400).json({
-//           success: updateResponse.success,
-//           message: updateResponse.message,
-//           data: updateResponse.data,
-//         });
-//       }
-//     } else {
-//       res.status(400).json({ success, message, data });
-//     }
-//   } catch (error) {
-//     res.status(400).json({ message: error });
-//   }
-// });
 
 // router.post("/verifyAndChangePassword/:id", async (req, res) => {
 //   try {
@@ -245,7 +233,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.patch("/:id", uploadImg, async (req, res) => {
+router.patch("/:id", async (req, res) => {
   try {
     let { success, message, data } = await UserService.Img_update(
       req.params.id,

@@ -16,7 +16,6 @@ exports.create = async (user) => {
     }
     const salt = await bcrypt.genSalt(10);
     const encryptedPassword = await bcrypt.hash(String(user.password), salt);
-    // user.password = encryptedPassword;
     const info = new User({
       firstName: user.firstName,
       lastName: user.lastName,
@@ -29,8 +28,6 @@ exports.create = async (user) => {
       address: user.address,
       position: user.position,
     });
-
-    // const info = new User(user);s
 
     const userData = await info.save();
     const { successMail, messageMail } = await email.sendForVeriy(userData);

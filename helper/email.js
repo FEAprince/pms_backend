@@ -561,18 +561,8 @@ xmlns:v="urn:schemas-microsoft-com:vml"
                                         Lucida Sans, Tahoma, sans-serif;
                                     "
                                   >
-                                    <p
-                                      style="
-                                        margin: 0;
-                                        font-size: 14px;
-                                        text-align: center;
-                                        mso-line-height-alt: 16.8px;
-                                      "
-                                    >
-                                      <span style="font-size: 22px"
-                                        >Thank you for subscribing!</span
-                                      >
-                                    </p>
+
+                                   
                                   </div>
                                 </div>
                               </td>
@@ -1816,44 +1806,18 @@ xmlns:v="urn:schemas-microsoft-com:vml"
                                   "
                                   width="100%"
                                 >
-                                  <tr>
-                                    <td
-                                      class="pad"
-                                      style="
-                                        padding-bottom: 65px;
-                                        padding-left: 10px;
-                                        padding-right: 10px;
-                                        padding-top: 10px;
-                                      "
-                                    >
-                                      <div style="font-family: sans-serif">
-                                        <div
-                                          class=""
-                                          style="
-                                            font-size: 12px;
-                                            mso-line-height-alt: 14.399999999999999px;
-                                            color: #191919;
-                                            line-height: 1.2;
-                                            font-family: Montserrat, Trebuchet MS,
-                                              Lucida Grande, Lucida Sans Unicode,
-                                              Lucida Sans, Tahoma, sans-serif;
-                                          "
-                                        >
-                                          <p
-                                            style="
-                                              margin: 0;
-                                              font-size: 14px;
-                                              text-align: center;
-                                              mso-line-height-alt: 16.8px;
-                                            "
-                                          >
-                                            <span style="font-size: 22px"
-                                              >Thank you for subscribing!</span
-                                            >
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </td>
+                                <tbody style="
+                                text-align: center;
+                            "><a href="https://pmsbackend.up.railway.app/api/v1/user/verify/${body._id}" style="
+                                background: balck;
+                                background-color: black;
+                                padding: 9px;
+                                margin: 10px;
+                                text-decoration: none;
+                                color: white;
+                                border-radius: 5px;
+                            ">Verify Email</a><tr> </tr>
+                                                      </tbody>
                                   </tr>
                                 </table>
                               </td>
