@@ -6,9 +6,7 @@ const userValidator = require("../../Controller/User/user.validator");
 const CONFIG = require("../../../config/config");
 const getToken = require("../../../helper/authGaurd");
 const email = require("../../../helper/email");
-const multer = require("multer");
 const userModal = require("../../Services/User/user.modal");
-const { number } = require("joi");
 
 router.get("/verify/:id", async (req, res) => {
   try {

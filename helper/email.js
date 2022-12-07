@@ -1263,7 +1263,7 @@ module.exports = {
   </body>
 </html>
 
-      `
+      `,
     };
     try {
       const sendedMail = await transporter.sendMail(mailOptions);
