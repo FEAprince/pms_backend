@@ -100,27 +100,27 @@ router.post("/search", async (req, res) => {
       }
     } else {
       const result = await Projects.find({
-        $or: [
+        $and: [
           { isActive: true },
           { projectName: { $regex: ".*" + searchText + ".*", $options: "i" } },
-          {
-            projectDescription: {
-              $regex: ".*" + searchText + ".*",
-              $options: "i",
-            },
-          },
-          {
-            projectStatus: { $regex: ".*" + searchText + ".*", $options: "i" },
-          },
-          {
-            projectEndDate: { $regex: ".*" + searchText + ".*", $options: "i" },
-          },
-          {
-            projectStartDate: {
-              $regex: ".*" + searchText + ".*",
-              $options: "i",
-            },
-          },
+          // {
+          //   projectDescription: {
+          //     $regex: ".*" + searchText + ".*",
+          //     $options: "i",
+          //   },
+          // },
+          // {
+          //   projectStatus: { $regex: ".*" + searchText + ".*", $options: "i" },
+          // },
+          // {
+          //   projectEndDate: { $regex: ".*" + searchText + ".*", $options: "i" },
+          // },
+          // {
+          //   projectStartDate: {
+          //     $regex: ".*" + searchText + ".*",
+          //     $options: "i",
+          //   },
+          // },
         ],
       })
         .populate(["categoryId", "assignUsers"])
