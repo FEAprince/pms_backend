@@ -100,8 +100,8 @@ router.post("/search", async (req, res) => {
       }
     } else {
       const result = await Projects.find({
-        where: { isActive: true },
         $or: [
+          { isActive: true },
           { projectName: { $regex: ".*" + searchText + ".*", $options: "i" } },
           {
             projectDescription: {
