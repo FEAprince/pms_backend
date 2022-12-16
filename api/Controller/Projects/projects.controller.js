@@ -99,8 +99,8 @@ router.post("/search", async (req, res) => {
           .json({ success: false, message: "data  not found", data: [] });
       }
     } else {
-      console.log("text", searchText);
       const result = await Projects.find({
+        where: { isActive: true },
         $or: [
           { projectName: { $regex: ".*" + searchText + ".*", $options: "i" } },
           {
@@ -122,7 +122,10 @@ router.post("/search", async (req, res) => {
             },
           },
         ],
-      }).populate(["categoryId", "assignUsers"]);
+      })
+        .populate(["categoryId", "assignUsers"])
+        .limit(req.body.rowsPerPage)
+        .skip(req.body.rowsPerPage * (req.body.page - 1));
 
       if (result.length > 0) {
         return res.status(200).json({
