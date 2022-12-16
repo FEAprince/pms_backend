@@ -86,7 +86,7 @@ router.post("/search", async (req, res) => {
     if (typeof searchText === "number") {
       const result = await Projects.find({
         $or: [{ projectName: searchText }],
-      });
+      }).populate(["categoryId", "assignUsers"]);
       if (result.length > 0) {
         return res.status(200).json({
           success: true,
@@ -99,6 +99,7 @@ router.post("/search", async (req, res) => {
           .json({ success: false, message: "data  not found", data: [] });
       }
     } else {
+      console.log("text", searchText);
       const result = await Projects.find({
         $or: [
           { projectName: { $regex: ".*" + searchText + ".*", $options: "i" } },
@@ -121,7 +122,8 @@ router.post("/search", async (req, res) => {
             },
           },
         ],
-      });
+      }).populate(["categoryId", "assignUsers"]);
+
       if (result.length > 0) {
         return res.status(200).json({
           success: true,

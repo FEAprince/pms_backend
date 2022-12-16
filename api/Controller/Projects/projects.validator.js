@@ -12,7 +12,7 @@ exports.projects = (req, res, next) => {
         assignUsers: Joi.array().required(),
         projectStatus: Joi.string().required(),
         categoryId: Joi.objectId().required(),
-        daysLeft: Joi.number()
+        daysLeft: Joi.number(),
       });
 
       let data = schema.validate(req.body);
